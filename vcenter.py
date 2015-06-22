@@ -125,9 +125,9 @@ class Collector(object):
             Name of the datastore.
 
         :returns:
-            A dictionary with three keys: capacity, free, and usage. The
-            capacity and free space are measured in megabytes while the usage
-            is a percentage.
+            A dictionary with four keys: capacity, free, used, and usage. The
+            capacity, free, and used space are measured in megabytes while the
+            usage is a percentage.
 
         """
 
@@ -157,6 +157,7 @@ class Collector(object):
         return {
             'capacity': capacity,
             'free': free,
+            'used': capacity - free,
             'usage': usage,
         }
 
